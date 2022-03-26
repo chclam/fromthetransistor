@@ -11,7 +11,7 @@ def or_(a, b):
   return nand(nand(a, a), nand(b, b))
 
 def xor(a, b):
-  return and_(or_(a, b), not_(and_(a, b)))
+  return and_(or_(a, b), nand(a, b))
 
 def mux(a, b, sel):
   return or_(and_(not_(sel), a), and_(sel, b))
