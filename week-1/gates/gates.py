@@ -18,3 +18,17 @@ def mux(a, b, sel):
 
 def dmux(a, sel):
   return and_(not_(sel), a), and_(sel, a)
+
+def multi_not(a):
+  return [not_(a[i]) for i in range(len(a))]
+
+def multi_and(a, b):
+  assert(len(a) == len(b))
+  return [and_(a[i], b[i]) for i in range(len(a))]
+
+def multi_or(a, b):
+  assert(len(a) == len(b))
+  return [or_(a[i], b[i]) for i in range(len(a))]
+
+def adder(a, b):
+  return xor(a, b), and_(a, b)

@@ -45,3 +45,15 @@ class TestGates(unittest.TestCase):
     self.assertEqual(dmux(1, 0), (1, 0))
     self.assertEqual(dmux(0, 1), (0, 0))
     self.assertEqual(dmux(1, 1), (0, 1))
+
+  def test_multi_not(self):
+    self.assertEqual(multi_not([0]), [1])
+    self.assertEqual(multi_not([1]), [0])
+    self.assertEqual(multi_not([0, 1]), [1, 0])
+
+  def test_adder(self):
+    self.assertEqual(adder(0, 0), (0, 0))
+    self.assertEqual(adder(0, 1), (1, 0))
+    self.assertEqual(adder(1, 0), (1, 0))
+    self.assertEqual(adder(1, 1), (0, 1))
+
