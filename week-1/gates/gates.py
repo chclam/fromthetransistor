@@ -30,5 +30,12 @@ def multi_or(a, b):
   assert(len(a) == len(b))
   return [or_(a[i], b[i]) for i in range(len(a))]
 
-def adder(a, b):
-  return xor(a, b), and_(a, b)
+def half_adder(a, b):
+  carry = and_(a, b)
+  sum_ = xor(a, b)
+  return carry, sum_
+
+def full_adder(a, b, c):
+  carry = or_(and_(c, or_(a, b)), and_(and_(a, b), not_(c)))
+  sum_ = or_(and_(xor(a, b), not_(c)), and_(c, not_(xor(a, b))))
+  return carry, sum_

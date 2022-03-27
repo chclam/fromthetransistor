@@ -51,9 +51,18 @@ class TestGates(unittest.TestCase):
     self.assertEqual(multi_not([1]), [0])
     self.assertEqual(multi_not([0, 1]), [1, 0])
 
-  def test_adder(self):
-    self.assertEqual(adder(0, 0), (0, 0))
-    self.assertEqual(adder(0, 1), (1, 0))
-    self.assertEqual(adder(1, 0), (1, 0))
-    self.assertEqual(adder(1, 1), (0, 1))
+  def test_half_adder(self):
+    self.assertEqual(half_adder(0, 0), (0, 0))
+    self.assertEqual(half_adder(0, 1), (0, 1))
+    self.assertEqual(half_adder(1, 0), (0, 1))
+    self.assertEqual(half_adder(1, 1), (1, 0))
 
+  def test_full_adder(self):
+    self.assertEqual(full_adder(0, 0, 0), (0, 0))
+    self.assertEqual(full_adder(0, 1, 0), (0, 1))
+    self.assertEqual(full_adder(1, 0, 0), (0, 1))
+    self.assertEqual(full_adder(1, 1, 0), (1, 0))
+    self.assertEqual(full_adder(0, 0, 1), (0, 1))
+    self.assertEqual(full_adder(0, 1, 1), (1, 0))
+    self.assertEqual(full_adder(1, 0, 1), (1, 0))
+    self.assertEqual(full_adder(1, 1, 1), (1, 1))
