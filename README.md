@@ -1,3 +1,5 @@
+# >>>> Moved to a [new personal repo](https://github.com/chclam/diy-ordinateur)
+
 ## From the Transistor to the Web Browser
 
 Hiring is hard, a lot of modern CS education is really bad, and it's hard to find people who understand the modern computer stack from first principles.
